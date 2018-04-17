@@ -40,6 +40,7 @@ describe("PasswordField", () => {
     beforeEach(() => {
       wrapper = shallow(<PasswordField {...props} />);
       wrapper.instance().handleFocus();
+      wrapper.update();
     });
 
     it("calls the onFocus callback", () => {
@@ -53,6 +54,7 @@ describe("PasswordField", () => {
     describe("then on blur", () => {
       beforeEach(() => {
         wrapper.instance().handleBlur();
+        wrapper.update();
       });
 
       it("calls the onBlur callback", () => {
@@ -69,6 +71,7 @@ describe("PasswordField", () => {
 
       beforeEach(() => {
         wrapper.instance().handlePasswordRevealButtonClick(event);
+        wrapper.update();
       });
 
       it("reveals the password", () => {
@@ -83,6 +86,7 @@ describe("PasswordField", () => {
       describe("then when the hide password button is clicked", () => {
         beforeEach(() => {
           wrapper.instance().handlePasswordHideButtonClick(event);
+          wrapper.update();
         });
 
         it("hides the password", () => {

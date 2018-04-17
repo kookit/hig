@@ -16,6 +16,7 @@ describe("<Flyout />", () => {
       const wrapper = shallow(<Flyout />);
       expect(wrapper.find(FlyoutAdapter)).toHaveProp("open", false);
       wrapper.instance().toggleFlyout();
+      wrapper.update();
       expect(wrapper.find(FlyoutAdapter)).toHaveProp("open", true);
     });
   });
@@ -26,6 +27,7 @@ describe("<Flyout />", () => {
         const wrapper = shallow(<Flyout open />);
         expect(wrapper.find(FlyoutAdapter)).toHaveProp("open", true);
         wrapper.instance().toggleFlyout();
+        wrapper.update();
         expect(wrapper.find(FlyoutAdapter)).toHaveProp("open", true);
       });
     });
@@ -35,6 +37,7 @@ describe("<Flyout />", () => {
         const wrapper = shallow(<Flyout open={false} />);
         expect(wrapper.find(FlyoutAdapter)).toHaveProp("open", false);
         wrapper.instance().toggleFlyout();
+        wrapper.update();
         expect(wrapper.find(FlyoutAdapter)).toHaveProp("open", false);
       });
     });

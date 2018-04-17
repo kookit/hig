@@ -64,6 +64,7 @@ describe("Tabs", () => {
             .find(InternalTab)
             .get(secondTabIndex)
             .props.activateTab(secondTabIndex);
+          wrapper.update();
         });
 
         it("activates the tab", () => {

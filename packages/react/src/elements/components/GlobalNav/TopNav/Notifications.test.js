@@ -56,6 +56,7 @@ describe("<Notifications", () => {
       });
       it("resets unseen count of notifications", () => {
         wrapper.instance().onClick();
+        wrapper.update();
         expect(wrapper.find(NotificationsAdapter)).toHaveProp("unseenCount", 1);
         expect(wrapper.find(NotificationsAdapter)).toHaveProp(
           "showNotificationsCount",
@@ -63,6 +64,7 @@ describe("<Notifications", () => {
         );
 
         wrapper.instance().onClickOutside();
+        wrapper.update();
         expect(wrapper.find(NotificationsAdapter)).toHaveProp("unseenCount", 0);
         expect(wrapper.find(NotificationsAdapter)).toHaveProp(
           "showNotificationsCount",
